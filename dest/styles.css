@@ -1,0 +1,63 @@
+body {
+  color: orange; }
+
+.shop {
+  display: flex;
+  flex-flow: row;
+  margin: 10px; }
+
+.table {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+  -webkit-border: 2px solid #ddd;
+  -moz-border: 2px solid #ddd;
+  -ms-border: 2px solid #ddd;
+  border: 2px solid #ddd;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px; }
+  .table .prod {
+    -webkit-border: 1px solid #ddd;
+    -moz-border: 1px solid #ddd;
+    -ms-border: 1px solid #ddd;
+    border: 1px solid #ddd;
+    padding: 5px; }
+
+.take {
+  transition: all .2s;
+  background: blue;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px; }
+
+.check {
+  -webkit-border: 5px solid #ddd;
+  -moz-border: 5px solid #ddd;
+  -ms-border: 5px solid #ddd;
+  border: 5px solid #ddd;
+  padding: 5px; }
+
+.maney {
+  color: green; }
+
+.hide {
+  transition: all 1s;
+  display: none; }
+
+.casino {
+  display: flex;
+  flex-flow: row;
+  align-items: center; }
+  .casino .listMachines {
+    display: flex;
+    flex-flow: row;
+    padding: 5px; }
+    .casino .listMachines p {
+      padding: 5px; }

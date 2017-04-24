@@ -1,0 +1,66 @@
+
+// variables
+$color: #ddd
+$main-color: blue
+$margin: 10px
+$padding: 5px
+
+// mixins
+=border-radius($radius)
+  -webkit-border-radius: $radius
+  -moz-border-radius:    $radius
+  -ms-border-radius:     $radius
+  border-radius:         $radius
+=border($width)
+  -webkit-border: $width solid $color
+  -moz-border:    $width solid $color
+  -ms-border:     $width solid $color
+  border:         $width solid $color
+
+
+//styles
+body
+  color: orange
+.shop
+  display: flex
+  flex-flow: row
+  margin: $margin
+.table
+  display: flex
+  flex-flow: column
+  justify-content: space-around
+  align-items: center
+  width: 200px
+  height: 200px
+  margin: $margin
+  +border(2px)
+  +border-radius($margin)
+  .prod
+    +border(1px)
+    padding: $padding
+.take
+  transition: all .2s
+  background: $main-color
+  +border-radius($padding)
+
+.check
+  +border(5px)
+  padding: $padding
+
+.maney
+  color: green
+
+.hide
+  transition: all 1s
+  display: none
+
+.casino
+  display: flex
+  flex-flow: row
+  align-items: center
+  .listMachines
+    display: flex
+    flex-flow: row
+    padding: $padding
+    p
+      padding: $padding
