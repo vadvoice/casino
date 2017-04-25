@@ -196,7 +196,7 @@ function prizeMoney( number, playSum, object ) {
       object.beginMoney -= win;
       break;
     default:
-      return 'not today me friend, try again: ' + win
+      return 'not today my friend, try again: ' + win
   }
   return win;
 }
@@ -396,11 +396,13 @@ function addAutomates( casino ) {
   var $casino = document.querySelector('.casino');
   $casino.appendChild(flexWrap);
 
+  // money in casino
+  var moneyCasino = document.querySelector('.data-money');
   // listen play
-  listenPlaySesion( playBtnArr, casino.machines );
-  listenerPutMoney( putMoneyBtnArr, casino.machines );
-  listenerGetMoney( getMoneyBtnArr, casino.machines );
-  listenerGetAllMoney( getAllMoneyBtnArr, casino.machines );
+  listenPlaySesion( playBtnArr, casino.machines, moneyCasino );
+  listenerPutMoney( putMoneyBtnArr, casino.machines, moneyCasino );
+  listenerGetMoney( getMoneyBtnArr, casino.machines, moneyCasino );
+  listenerGetAllMoney( getAllMoneyBtnArr, casino.machines, moneyCasino );
 
   // @TODO listener for the methods automate
   // listenerMethodsMachine( )
@@ -429,23 +431,25 @@ function listenPlaySesion( playBtnArr, machines ) {
   })
 }
 // listen put money
-function listenerPutMoney( putMoneyBtnArr, machines ) {
+function listenerPutMoney( putMoneyBtnArr, machines, moneyCasino ) {
   putMoneyBtnArr.forEach(function ( btn, index, arr ) {
     btn.onclick = function (e) {
       e.stopPropagation();
-      var moneyForSession = verifyNumber(prompt('money for play', 5))
+      var moneyForSession = verifyNumber(prompt('invest money', 5));
       var result = machines[index].putMoney(moneyForSession);
+      moneyCasino.innerText = calculateMoney(machines);
       alert( "automate have: " + result + " $");
     }
   })
 }
 // listen get money
-function listenerGetMoney( getMoneyBtnArr, machines ) {
+function listenerGetMoney( getMoneyBtnArr, machines, moneyCasino ) {
   getMoneyBtnArr.forEach(function ( btn, index, arr ) {
     btn.onclick = function (e) {
       e.stopPropagation();
       var moneyForSession = verifyNumber(prompt('money for play', 5))
       var result = machines[index].takeMoney(moneyForSession);
+      moneyCasino.innerText = calculateMoney(machines);
       alert( "automate have: " + machines[index].beginMoney + " $");
     }
   })
