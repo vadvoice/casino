@@ -1,7 +1,9 @@
 
 // variables
-$color: #ddd
-$main-color: blue
+$text-color: #22313F
+$text-hover-color: #D35400
+$main-color: #1F3A93
+$background: #F39C12
 $margin: 10px
 $padding: 5px
 
@@ -12,43 +14,25 @@ $padding: 5px
   -ms-border-radius:     $radius
   border-radius:         $radius
 =border($width)
-  -webkit-border: $width solid $color
-  -moz-border:    $width solid $color
-  -ms-border:     $width solid $color
-  border:         $width solid $color
+  -webkit-border: $width solid $main-color
+  -moz-border:    $width solid $main-color
+  -ms-border:     $width solid $main-color
+  border:         $width solid $main-color
 
 
 //styles
 body
-  color: orange
-.shop
-  display: flex
-  flex-flow: row
-  margin: $margin
-.table
-  display: flex
-  flex-flow: column
-  justify-content: space-around
-  align-items: center
-  width: 200px
-  height: 200px
-  margin: $margin
-  +border(2px)
-  +border-radius($margin)
-  .prod
-    +border(1px)
-    padding: $padding
-.take
-  transition: all .2s
-  background: $main-color
-  +border-radius($padding)
-
-.check
-  +border(5px)
-  padding: $padding
-
-.maney
-  color: green
+  color: $main-color
+  background: $background
+  font-family: 'Bungee Inline', Arial
+.wrap-title
+  font-size: 1.5em
+  margin: 0 auto
+  text-align: center
+  p
+    display: inline-block
+    &:hover
+      color: $text-hover-color
 
 .hide
   transition: all 1s
@@ -64,3 +48,23 @@ body
     padding: $padding
     p
       padding: $padding
+
+button
+  margin: 1px
+  padding: .5em 1em
+  border-radius: 5px
+  text-transform: capitalize
+  transition: all .2s
+  &:hover
+    box-shadow: 0 2px 5px $text-color
+  &:active
+    transform: scale(.95)
+
+.machine p
+  display: flex
+  flex-direction: column
+  align-items: center
+  button
+    margin-top: 10px
+    &:first-child
+      margin-top: 0
