@@ -17,3 +17,4 @@ Publish contents to Github pages
 ```ghpages
 gulp deploy
 ```
+demo: https://willfulaversion.github.io/casino/
